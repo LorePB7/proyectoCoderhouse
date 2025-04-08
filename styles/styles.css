@@ -28,9 +28,15 @@ body {
     padding-top: 56px; /* Compensar la altura del header fijo */
 }
 
-h1, h2, h3, .site-name {
+h1, h2, h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
+}
+
+.site-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--color-footer);
 }
 
 /* ==========================================
