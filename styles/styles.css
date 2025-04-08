@@ -1,17 +1,14 @@
-/* Mis colores para el sitio */
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================== */
 :root {
-    --color-primary: #f5b041;
-    /* Este es el color naranja para la barra de navegación y el pie de página */
-    --color-secondary: #f49e2b;
-    /* Color para los botones */
-    --color-background: #fef8ec;
-    /* Color crema claro para el fondo de la página */
-    --color-section: #fceac9;
-    /* Color para el fondo de las secciones */
-    --color-text: #431205;
-    /* Color marrón oscuro para los textos */
-    --color-text-light: white;
-    /* Color blanco para textos sobre fondos oscuros */
+    --color-primary: #f5b041;    /* Color naranja para la barra de navegación y el pie de página */
+    --color-secondary: #f49e2b;   /* Color para los botones */
+    --color-background: #fef8ec;  /* Color crema claro para el fondo de la página */
+    --color-section: #fff1d6;     /* Color para el fondo de las secciones */
+    --color-text: #431205;        /* Color marrón oscuro para los textos */
+    --color-text-light: white;    /* Color blanco para textos sobre fondos oscuros */
+    --color-footer: #333333;      /* Color gris oscuro para el footer */
 }
 
 * {
@@ -20,24 +17,32 @@
     box-sizing: border-box;
 }
 
-/* Configuración de la tipografía */
+/* ==========================================
+   ESTILOS BASE Y TIPOGRAFÍA
+   ========================================== */
 body {
     font-family: 'Oswald', sans-serif;
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
+    padding-top: 56px; /* Compensar la altura del header fijo */
 }
 
-/* Estilo para los títulos */
 h1, h2, h3, .site-name {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
 }
 
-/* Estilo del encabezado */
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
 header {
     background-color: var(--color-primary);
     color: var(--color-text-light);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .site-name {
@@ -46,7 +51,6 @@ header {
     letter-spacing: 1px;
 }
 
-/* Menú de navegación */
 .nav-menu {
     list-style-type: none;
 }
@@ -62,14 +66,26 @@ header {
     height: 20px;
 }
 
-/* Sección principal con imagen de fondo */
+/* ==========================================
+   SECCIONES HERO
+   ========================================== */
 .hero {
     background-color: var(--color-section);
-    background-image: url('../images/imageningeniero1.jpg');
     background-size: cover;
+    background-position: center;
     text-align: center;
-    padding: 5rem 0;
+    padding: 8rem 0;
     position: relative;
+}
+
+.hero:not(.nosotros) {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.hero:first-of-type {
+    background-image: url('../images/imageningeniero1.jpg');
 }
 
 .hero::before {
@@ -79,7 +95,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(252, 234, 201, 0.7);
 }
 
 .hero .container {
@@ -88,110 +104,75 @@ header {
 }
 
 .nosotros {
-    background-color: var(--color-section);
+    background-color: var(--color-background);
     background-image: none;
 }
 
 .servicios {
-    background-color: var(--color-section);
+    background-color: var(--color-background);
     background-image: url('../images/imageningeniero2.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
-.hero-title {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
+/* ==========================================
+   BOTONES
+   ========================================== */
 .button {
     background-color: var(--color-secondary);
     border: 2px solid var(--color-primary);
     color: var(--color-text-light);
     text-decoration: none;
     transition: all 0.3s ease;
+    border-radius: 25px;
+    padding: 0.5rem 2.5rem;
+    min-width: 180px;
+    display: inline-block;
 }
 
 .button:hover {
     background-color: var(--color-primary);
     color: var(--color-text-light);
+    transform: scale(1.05);
 }
 
-/* Pie de página */
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-}
-
-.social-media img {
-    width: 30px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-    transform: scale(1.2);
-}
-
-.contact-info {
-    text-align: center;
-    font-style: italic;
-}
-
-.copyright {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Estilos para la página Nosotros */
-.img-nosotros {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Tarjetas de servicios con efecto hover */
-.service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.1);
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Estilo para el acordeón de preguntas */
-.accordion-button:not(.collapsed) {
-    background-color: var(--color-section);
+    background-color: var(--color-footer);
     color: var(--color-primary);
-    font-weight: bold;
+    padding: 2rem 0;
 }
 
-.accordion-button:focus {
-    box-shadow: 0 0 0 0.25rem rgba(250, 163, 7, 0.25);
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
-/* Sección de formulario de contacto */
-.contact-form-section {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+footer img {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(1122%) hue-rotate(346deg) brightness(101%) contrast(92%);
 }
 
-.form-control:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 0.25rem rgba(250, 163, 7, 0.25);
+.social-media a {
+    display: inline-block;
+    margin: 0 0.5rem;
 }
 
-/* Ajustes para pantallas medianas */
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Pantallas medianas */
 @media (max-width: 767.98px) {
+    .hero {
+        padding: 6rem 0;
+    }
+    
+    .hero:not(.nosotros) {
+        min-height: 400px;
+    }
+    
     .hero-title {
         font-size: 2rem;
     }
@@ -211,10 +192,11 @@ footer {
     }
 }
 
-/* Ajustes para pantallas pequeñas */
+/* Pantallas pequeñas */
 @media (max-width: 575.98px) {
     .hero {
-        padding: 3rem 0;
+        padding: 4rem 0;
+        min-height: 350px;
     }
     
     .hero-title {
@@ -226,4 +208,87 @@ footer {
         width: 100%;
         margin-bottom: 1rem;
     }
+}
+
+/* ==========================================
+   ELEMENTOS BOOTSTRAP PERSONALIZADOS
+   ========================================== */
+/* Formularios */
+.form-control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(245, 176, 65, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* Acordeón (Preguntas frecuentes) */
+.accordion-button:not(.collapsed) {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.accordion-button:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(245, 176, 65, 0.25);
+}
+
+.accordion-button.collapsed {
+    background-color: var(--color-section);
+    color: var(--color-text);
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23431205'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Tarjetas de servicios */
+.service-card {
+    border-color: var(--color-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(245, 176, 65, 0.2);
+}
+
+.card-title {
+    color: var(--color-primary);
+}
+
+/* Elementos de formulario personalizados */
+.form-label {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+/* Bordes redondeados para elementos de formulario */
+.form-control, .btn, .accordion-item {
+    border-radius: 8px;
+}
+
+/* Fondo para secciones de contenido */
+.contact-form-section, .about-content, .accordion-item {
+    background-color: var(--color-section) !important;
+    border: 1px solid rgba(245, 176, 65, 0.2);
 }
