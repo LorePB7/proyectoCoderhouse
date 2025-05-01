@@ -1,0 +1,107 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Animaciones para secciones principales con retrasos escalonados */
+.hero-section {
+  @include m.fade-in(0.7s);
+}
+
+.nosotros-section {
+  @include m.fade-in(0.7s, 0.2s);
+}
+
+.servicios-section {
+  @include m.fade-in(0.7s, 0.4s);
+}
+
+.testimonials-section {
+  @include m.fade-in(0.7s, 0.6s);
+}
+
+/* Animaciones específicas para elementos dentro de la sección Nosotros */
+.nosotros {
+  h2 {
+    @include m.fade-in(0.7s, 0.1s);
+  }
+  
+  p {
+    @include m.fade-in(0.7s, 0.2s);
+  }
+}
+
+/* Animaciones específicas para elementos dentro de la sección Servicios */
+.servicios {
+  h2 {
+    @include m.fade-in(0.7s, 0.1s);
+  }
+  
+  p {
+    @include m.fade-in(0.7s, 0.2s);
+  }
+}
+
+/* Animaciones para tarjetas de servicios con efecto cascada */
+.service-card {
+  @include m.fade-in(0.5s);
+  
+  /* Retrasos escalonados para crear efecto de cascada */
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Configuración de la sección de servicios destacados */
+.featured-services {
+  background-color: v.$color-background;
+  padding: 3rem 0;
+  
+  /* Estilos para tarjetas de servicios con efectos al pasar el cursor */
+  .service-card {
+    @include m.box-shadow(0.1);
+    @include m.transition;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    
+    /* Efecto de elevación al pasar el cursor */
+    &:hover {
+      @include m.box-shadow(0.2);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* Configuración de la sección de testimonios */
+.testimonials {
+  background-color: v.$color-section;
+  padding: 3rem 0;
+  
+  /* Estilos para tarjetas de testimonios */
+  .testimonial-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    @include m.box-shadow(0.1);
+    @include m.fade-in(0.5s);
+    
+    /* Estilo para el texto de la cita */
+    .quote {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    
+    /* Estilo para el nombre del autor */
+    .author {
+      font-weight: 600;
+    }
+  }
+}

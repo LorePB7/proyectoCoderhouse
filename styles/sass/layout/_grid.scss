@@ -1,0 +1,81 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Configuración básica del contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Sistema de filas con flexbox */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+/* Utilidades para alineación de texto */
+.text-center {
+  text-align: center;
+}
+
+/* Utilidades para centrado de elementos */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Utilidades para centrado horizontal con flexbox */
+.justify-content-center {
+  justify-content: center;
+}
+
+/* Utilidades para centrado vertical con flexbox */
+.align-items-center {
+  align-items: center;
+}
+
+/* Estilos para el contenido principal de cada página */
+.page-content {
+  background-color: v.$color-background;
+  min-height: 70vh;
+  padding: 2rem 0;
+  
+  /* Estilo para títulos principales dentro del contenido */
+  h1 {
+    color: v.$color-text;
+    margin-bottom: 2rem;
+    @include m.fade-in(0.5s);
+  }
+  
+  /* Fondo claro para secciones de contenido */
+  .bg-light {
+    background-color: white !important;
+    border-radius: 10px;
+    @include m.box-shadow(0.1);
+  }
+}
+
+/* Configuración para imágenes de fondo */
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Imagen de fondo para sección Nosotros */
+  &.about-bg {
+    background-image: url('../images/about-bg.jpg');
+  }
+  
+  /* Imagen de fondo para sección Servicios */
+  &.services-bg {
+    background-image: url('../images/services-bg.jpg');
+  }
+  
+  /* Imagen de fondo para sección Contacto */
+  &.contact-bg {
+    background-image: url('../images/contact-bg.jpg');
+  }
+}

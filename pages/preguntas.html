@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes - Rebus Ingeniería</title>
-    <!-- Bootstrap CSS -->
+    <!-- Carga de estilos de Bootstrap para componentes responsivos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados del sitio -->
     <link rel="stylesheet" href="../styles/styles.css">
-    <!-- Enlaces a fuentes de Google Fonts -->
+    <!-- Carga de fuentes tipográficas desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Cabecera con barra de navegación -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
+                <!-- Logo o nombre de la empresa -->
                 <a class="navbar-brand site-name" href="#">Rebus Ingeniería</a>
+                <!-- Botón para menú móvil -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Menú de navegación principal -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto nav-menu">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
@@ -30,6 +35,7 @@
                         <li class="nav-item"><a class="nav-link" href="../pages/servicios.html">Servicios</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link active" href="../pages/preguntas.html">Preguntas</a></li>
+                        <!-- Selector de idioma -->
                         <li class="nav-item language-selector">
                             <a class="nav-link" href="#"><img src="../images/lenguaje.svg" alt="Cambiar idioma" class="language-icon"></a>
                         </li>
@@ -39,13 +45,16 @@
         </nav>
     </header>
 
+    <!-- Contenido principal - Sección de preguntas frecuentes -->
     <section class="page-content py-5">
         <div class="container">
             <h1 class="text-center mb-5">Preguntas Frecuentes</h1>
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    <!-- Componente acordeón para mostrar preguntas y respuestas -->
                     <div class="accordion" id="faqAccordion">
+                        <!-- Pregunta 1: Servicios específicos -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -62,6 +71,7 @@
                             </div>
                         </div>
 
+                        <!-- Pregunta 2: Tiempos de proyecto -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -78,6 +88,7 @@
                             </div>
                         </div>
 
+                        <!-- Pregunta 3: Colaboración con arquitectos -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -93,6 +104,7 @@
                             </div>
                         </div>
 
+                        <!-- Pregunta 4: Normativas aplicadas -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -109,6 +121,7 @@
                             </div>
                         </div>
 
+                        <!-- Pregunta 5: Inspecciones durante obra -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -124,6 +137,7 @@
                             </div>
                         </div>
 
+                        <!-- Pregunta 6: Proceso de contratación -->
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header" id="headingSix">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -145,10 +159,11 @@
         </div>
     </section>
 
+    <!-- Pie de página con información de contacto -->
     <footer class="py-4">
         <div class="container">
             <div class="row justify-content-center">
-                <!-- Iconos de redes sociales centrados -->
+                <!-- Enlaces a redes sociales -->
                 <div class="col-12 text-center mb-3">
                     <div class="social-media">
                         <a href="#" class="me-2"><img src="../images/ig.svg" alt="Instagram"></a>
@@ -157,7 +172,7 @@
                     </div>
                 </div>
                 
-                <!-- Información de contacto -->
+                <!-- Datos de contacto -->
                 <div class="col-md-4 mb-3">
                     <div class="contact-info text-center">
                         <p class="mb-1">Email: contacto@rebusingenieria.com</p>
@@ -166,7 +181,7 @@
                     </div>
                 </div>
                 
-                <!-- Copyright centrado debajo de los iconos  -->
+                <!-- Información de derechos de autor -->
                 <div class="col-12 text-center">
                     <div class="copyright">
                         <span>&copy; 2025 Lorenzo Píccolo. | All Rights Reserved.</span>
@@ -176,7 +191,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- Carga de scripts de Bootstrap para funcionalidades interactivas -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

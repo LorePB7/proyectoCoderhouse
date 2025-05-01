@@ -1,0 +1,99 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Animaciones para elementos principales de la página */
+.services-header {
+  @include m.fade-in(0.7s);
+}
+
+.services-grid {
+  @include m.fade-in(0.7s, 0.2s);
+}
+
+/* Animaciones para tarjetas de servicios con efecto cascada */
+.service-card {
+  @include m.fade-in(0.5s);
+  
+  /* Retrasos escalonados para crear efecto de cascada */
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Configuración general de la sección de servicios */
+.services-section {
+  text-align: center; /* Alineación central de todo el contenido */
+  
+  /* Estilo para títulos de sección */
+  h2 {
+    text-align: center; /* Garantiza que el título esté centrado */
+    margin-bottom: 2rem;
+  }
+}
+
+/* Configuración de la rejilla de servicios */
+.services-grid {
+  @include m.fade-in(0.5s);
+  
+  /* Estilos para tarjetas individuales de servicios */
+  .service-card {
+    margin-bottom: 2rem;
+    text-align: center; /* Alineación central del contenido */
+    
+    /* Estilo para títulos de tarjetas */
+    .card-title {
+      color: v.$color-text;
+      font-weight: 600;
+      text-align: center; /* Garantiza que los títulos estén centrados */
+    }
+    
+    /* Estilo para textos descriptivos */
+    .card-text {
+      color: v.$color-text;
+      text-align: center; /* Garantiza que los textos estén centrados */
+    }
+  }
+}
+
+/* Configuración del contenedor de video */
+.video-container {
+  border-radius: 10px;
+  overflow: hidden;
+  @include m.box-shadow(0.1);
+  @include m.fade-in(0.7s);
+  
+  /* Ajustes para el iframe del video */
+  iframe {
+    border: none;
+  }
+}
+
+/* Estilos para la sección de detalles de servicios */
+.service-details {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  @include m.box-shadow(0.1);
+  
+  /* Estilo para subtítulos dentro de detalles */
+  h3 {
+    color: v.$color-text;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilo para párrafos descriptivos */
+  p {
+    color: v.$color-text;
+    line-height: 1.8;
+  }
+}

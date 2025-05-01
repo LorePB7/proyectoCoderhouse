@@ -1,0 +1,23 @@
+// Colores
+$color-primary: #f5b041;    // Color naranja para la barra de navegación y el pie de página
+$color-secondary: #f49e2b;   // Color para los botones
+$color-background: #fef8ec;  // Color crema claro para el fondo de la página
+$color-section: #fff1d6;     // Color para el fondo de las secciones
+$color-text: #431205;        // Color marrón oscuro para los textos
+$color-text-light: white;    // Color blanco para textos sobre fondos oscuros
+$color-footer: #333333;      // Color gris oscuro para el footer
+
+// Fuentes
+$font-primary: 'Oswald', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+
+// Breakpoints
+$breakpoint-sm: 575.98px;
+$breakpoint-md: 767.98px;
+$breakpoint-lg: 991.98px;
+$breakpoint-xl: 1199.98px;
+
+// Transiciones
+$transition-default: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+$transition-fast: all 0.2s ease;

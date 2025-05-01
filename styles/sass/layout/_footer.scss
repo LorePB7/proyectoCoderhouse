@@ -1,0 +1,64 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Estilos generales para el pie de página */
+footer {
+  background-color: v.$color-footer;
+  color: v.$color-primary;
+  padding: 2rem 0;
+  margin-top: auto; /* Empuja el footer al fondo de la página */
+  flex-shrink: 0; /* Evita que el footer se comprima */
+  width: 100%;
+  
+  /* Estilos para enlaces dentro del footer */
+  a {
+    color: v.$color-primary;
+    text-decoration: none;
+    
+    /* Efecto al pasar el cursor sobre enlaces */
+    &:hover {
+      color: lighten(v.$color-primary, 10%);
+    }
+  }
+  
+  /* Filtro para ajustar el color de las imágenes */
+  img {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(1122%) hue-rotate(346deg) brightness(101%) contrast(92%);
+  }
+  
+  /* Configuración de iconos de redes sociales */
+  .social-media {
+    a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      
+      /* Efecto de escala al pasar el cursor */
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  /* Estilos para la información de contacto */
+  .contact-info {
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  /* Estilos para el texto de derechos de autor */
+  .copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@include m.respond-to(md) {
+  .social-media, .contact-info, .copyright {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

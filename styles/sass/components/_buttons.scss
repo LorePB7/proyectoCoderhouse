@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.button {
+  background-color: v.$color-secondary;
+  border: 2px solid v.$color-primary;
+  color: v.$color-text-light;
+  text-decoration: none;
+  @include m.transition;
+  border-radius: 25px;
+  padding: 0.5rem 2.5rem;
+  min-width: 180px;
+  display: block; /* Cambiado de inline-block a block */
+  margin: 0 auto; /* Centrar el botón */
+  text-align: center;
+  max-width: 250px; /* Ancho máximo para el botón */
+  
+  &:hover {
+    background-color: v.$color-primary;
+    color: v.$color-text-light;
+    @include m.button-pulse;
+  }
+  
+  @include m.respond-to(sm) {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Contenedor para múltiples botones */
+.button-container,
+.buttons-wrapper,
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  
+  .button {
+    margin: 0.5rem;
+    display: inline-block;
+  }
+}
+
+/* Asegurar que los botones en cualquier sección estén centrados */
+.nosotros .button,
+.servicios .button,
+.about-content .button,
+.services-grid .button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch styles/sass/main.scss:styles/styles.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorePB7/proyectoCoderhouse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorePB7/proyectoCoderhouse/issues"
+  },
+  "homepage": "https://github.com/LorePB7/proyectoCoderhouse#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.87.0"
+  }
+}

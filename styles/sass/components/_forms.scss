@@ -1,0 +1,81 @@
+/* Importación de módulos de variables y mixins */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Estilo para el estado focus de los campos de formulario */
+.form-control:focus {
+  border-color: v.$color-secondary;
+  box-shadow: 0 0 0 0.25rem rgba(v.$color-primary, 0.25);
+  @include m.transition;
+}
+
+/* Estilo base para botones primarios */
+.btn-primary {
+  background-color: v.$color-secondary;
+  border-color: v.$color-primary;
+  color: v.$color-text-light;
+  @include m.button-pulse;
+}
+
+/* Estados hover y focus para botones primarios */
+.btn-primary:hover, 
+.btn-primary:focus {
+  background-color: v.$color-primary;
+  border-color: v.$color-primary;
+}
+
+/* Estilos para etiquetas de formulario */
+.form-label {
+  color: v.$color-text;
+  font-weight: 500;
+  @include m.fade-in(0.3s);
+}
+
+/* Estilos para campos de entrada */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid rgba(v.$color-primary, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Estado focus específico dentro del selector anidado */
+  &:focus {
+    border-color: v.$color-secondary;
+    box-shadow: 0 0 0 0.25rem rgba(v.$color-secondary, 0.25);
+  }
+  
+  /* Animación de aparición gradual */
+  @include m.fade-in(0.4s);
+}
+
+/* Estilo para checkboxes seleccionados */
+.form-check-input:checked {
+  background-color: v.$color-secondary;
+  border-color: v.$color-primary;
+}
+
+/* Animaciones para el formulario de contacto */
+.contact-form {
+  /* Animación para grupos de formulario con retraso escalonado */
+  .form-group {
+    @include m.fade-in(0.5s);
+    
+    /* Retrasos escalonados para crear efecto de cascada */
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+  }
+  
+  /* Animación pulsante para el botón de envío */
+  .btn-submit {
+    @include m.button-pulse;
+    animation-delay: 0.5s;
+  }
+}
