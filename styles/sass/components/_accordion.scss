@@ -1,0 +1,77 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Estilos generales del componente acordeón */
+.accordion {
+  /* Configuración de los elementos individuales del acordeón */
+  .accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(v.$color-primary, 0.2);
+    margin-bottom: 1rem;
+    @include m.box-shadow(0.05);
+    @include m.transition;
+    
+    /* Efecto al pasar el cursor */
+    &:hover {
+      @include m.box-shadow(0.1);
+    }
+  }
+  
+  /* Estilo para la cabecera del acordeón */
+  .accordion-header {
+    background-color: white;
+  }
+  
+  /* Estilo para el botón que expande/colapsa el acordeón */
+  .accordion-button {
+    background-color: white;
+    color: v.$color-text;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    
+    /* Estilo cuando el botón está expandido */
+    &:not(.collapsed) {
+      background-color: rgba(v.$color-primary, 0.1);
+      color: v.$color-text;
+      box-shadow: none;
+    }
+    
+    /* Estilo al enfocar el botón */
+    &:focus {
+      box-shadow: none;
+      border-color: rgba(v.$color-primary, 0.5);
+    }
+    
+    /* Personalización del icono de flecha */
+    &::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23431205'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+  }
+  
+  /* Estilo para el cuerpo del acordeón donde va el contenido */
+  .accordion-body {
+    padding: 1rem 1.25rem;
+    color: v.$color-text;
+  }
+}
+
+/* Animaciones para los elementos del acordeón */
+.accordion-item {
+  /* Animación de aparición gradual */
+  @include m.fade-in(0.5s);
+  
+  /* Retrasos escalonados para crear efecto de cascada */
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+}

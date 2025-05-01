@@ -1,0 +1,51 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Estilos base para todas las tarjetas */
+.card {
+  border-radius: 10px;
+  border: none;
+  overflow: hidden;
+  @include m.box-shadow(0.1);
+  @include m.transition;
+  height: 100%;
+  
+  /* Efecto de elevación al pasar el cursor */
+  &:hover {
+    @include m.box-shadow(0.2);
+    transform: translateY(-5px);
+  }
+  
+  /* Estilo para títulos de tarjetas */
+  .card-title {
+    color: v.$color-text;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+  
+  /* Estilo para texto dentro de tarjetas */
+  .card-text {
+    color: v.$color-text;
+  }
+  
+  /* Configuración para imágenes de cabecera */
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+/* Estilos específicos para tarjetas de servicios */
+.service-card {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: white;
+  
+  /* Configuración para íconos dentro de tarjetas de servicios */
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+  }
+}

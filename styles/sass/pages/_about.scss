@@ -1,0 +1,114 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Animación para la cabecera de la página Nosotros */
+.about-header {
+  @include m.fade-in(0.7s);
+}
+
+/* Estilos para el contenido principal */
+.about-content {
+  text-align: center;
+  
+  /* Configuración del bloque de texto */
+  .about-text {
+    margin-bottom: 2rem;
+    
+    /* Estilo para subtítulos con animación retrasada */
+    h2 {
+      color: v.$color-text;
+      font-weight: 600;
+      text-align: center;
+      @include m.fade-in(0.7s, 0.1s);
+    }
+    
+    /* Estilo para párrafos con mayor retraso en animación */
+    p {
+      color: v.$color-text;
+      line-height: 1.8;
+      text-align: center;
+      @include m.fade-in(0.7s, 0.2s);
+    }
+  }
+  
+  /* Configuración para imágenes con efecto de zoom al pasar el cursor */
+  .about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    @include m.box-shadow(0.1);
+    margin-bottom: 2rem;
+    @include m.fade-in(0.7s, 0.3s);
+    
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+      
+      /* Efecto de zoom suave al pasar el cursor */
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* Estilos para la sección del equipo */
+.team-section {
+  margin-top: 3rem;
+  
+  /* Animación para el título de sección */
+  h2 {
+    @include m.fade-in(0.7s, 0.1s);
+  }
+  
+  /* Animación para el párrafo introductorio */
+  > p {
+    @include m.fade-in(0.7s, 0.2s);
+  }
+  
+  /* Configuración de tarjetas de miembros del equipo */
+  .team-member {
+    text-align: center;
+    margin-bottom: 2rem;
+    @include m.fade-in(0.7s, 0.3s);
+    
+    /* Retrasos escalonados para crear efecto de cascada */
+    &:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+    
+    &:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+    
+    /* Estilo para fotos de perfil circulares */
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid v.$color-primary;
+    }
+    
+    /* Estilo para nombres de miembros */
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Estilo para descripciones de miembros */
+    p {
+      font-size: 0.9rem;
+      color: lighten(v.$color-text, 20%);
+    }
+  }
+}
+
+/* Animación específica para el párrafo debajo del título "Nuestro Equipo" */
+.col-lg-8.mx-auto > p.mb-5.text-center {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out forwards;
+  animation-delay: 0.2s;
+}

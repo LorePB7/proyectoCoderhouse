@@ -1,0 +1,50 @@
+/* Importación de módulos necesarios */
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* Configuración base para todos los títulos */
+h1, h2, h3 {
+  font-family: v.$font-primary;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Animación para títulos principales */
+h1 {
+  @include m.fade-in(0.7s);
+}
+
+/* Animación para subtítulos con retraso */
+h2 {
+  @include m.fade-in(0.7s, 0.1s);
+}
+
+/* Animación para títulos de tercer nivel con mayor retraso */
+h3 {
+  @include m.fade-in(0.7s, 0.2s);
+}
+
+/* Estilo especial para títulos de sección con línea decorativa */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: v.$color-text;
+  position: relative;
+  
+  /* Línea decorativa debajo del título */
+  &::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: v.$color-primary;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Estilo para el nombre del sitio en la cabecera */
+.site-name {
+  font-family: v.$font-primary;
+  font-weight: 700;
+  color: v.$color-footer;
+}

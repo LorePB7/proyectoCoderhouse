@@ -1,0 +1,63 @@
+@use 'variables' as v;
+
+// Mixins para media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: v.$breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: v.$breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: v.$breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: v.$breakpoint-xl) { @content; }
+  }
+}
+
+// Mixin para transiciones
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Mixin para animación de hover
+@mixin hover-transform($scale: 1.05, $translateY: 0) {
+  @include transition;
+  &:hover {
+    transform: scale($scale) translateY($translateY);
+  }
+}
+
+// Mixin para sombras
+@mixin box-shadow($opacity: 0.2) {
+  box-shadow: 0 10px 20px rgba(v.$color-primary, $opacity);
+}
+
+// Mixin para animación de entrada
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  opacity: 0;
+  animation: fadeIn $duration ease-in-out forwards;
+  animation-delay: $delay;
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+}
+
+// Mixin para animación de botones
+@mixin button-pulse {
+  &:hover {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+}
