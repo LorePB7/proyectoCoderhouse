@@ -29,7 +29,9 @@
   }
   
   /* Animación y alineación del contenido principal */
-  .hero-content {
+  .hero-content,
+  .hero-content2,
+  .hero-content3 {
     @include m.fade-in(0.8s);
     text-align: center; /* Centrado horizontal del contenido */
   }

@@ -50,12 +50,13 @@ header {
     &.active {
       color: v.$color-text-light !important;
       background-color: rgba(0, 0, 0, 0.15);
-      border-radius: 8px; /* Bordes redondeados para el elemento activo */
+      border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease; /* Asegurar transición suave */
       
-      /* Línea indicadora debajo del enlace activo */
+      /* Indicador visual debajo del enlace activo */
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 5px;
         left: 50%;
@@ -64,15 +65,15 @@ header {
         height: 3px;
         background-color: v.$color-text-light;
         border-radius: 3px;
+        transition: all 0.3s ease; /* Transición suave para el indicador */
       }
     }
   }
   
-  /* Animación para destacar el enlace activo */
-  .nav-item {
-    .nav-link.active {
-      animation: pulse-light 2s infinite;
-    }
+  /* Animación suave para el enlace activo */
+  .nav-item .nav-link.active {
+    animation: pulse-light 2s infinite;
+    animation-delay: 0.5s; /* Retrasar la animación para evitar el efecto brusco */
   }
 }
 
@@ -94,10 +95,21 @@ header {
   .navbar {
     .nav-link {
       margin: 0.2rem 0;
+      text-align: center;
       
       /* Ajuste del indicador para pantallas pequeñas */
       &.active::after {
         width: 15px;
+      }
+    }
+    
+    /* Centrar elementos del menú hamburguesa en móvil */
+    .navbar-collapse {
+      text-align: center;
+      
+      .navbar-nav {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
