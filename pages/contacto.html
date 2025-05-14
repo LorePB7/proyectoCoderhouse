@@ -4,15 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Rebus Ingeniería</title>
+    <title>Contacto con Ingenieros Estructurales en Santa Fe | Rebus Ingeniería</title>
+    <meta name="description"
+        content="Ponte en contacto con nuestro equipo de ingenieros estructurales en Santa Fe. Completa nuestro formulario para consultas sobre proyectos de ingeniería civil e industrial.">
+    <meta name="keywords"
+        content="contacto ingeniería estructural, formulario contacto, ingenieros Santa Fe, consulta proyectos, Rebus Ingeniería">
+    <meta name="author" content="Rebus Ingeniería">
     <!-- Carga de Bootstrap para estilos responsivos -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="preload" as="style" href="../styles/styles.css">
     <!-- Fuentes de Google: Playfair Display para títulos y Oswald para textos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <!-- Favicon para mejorar la identidad visual -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Metadatos para compartir en redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rebusingenieria.com/pages/contacto.html">
+    <meta property="og:title" content="Contacto con Ingenieros Estructurales en Santa Fe | Rebus Ingeniería">
+    <meta property="og:description"
+        content="Ponte en contacto con nuestro equipo de ingenieros estructurales en Santa Fe. Completa nuestro formulario para consultas sobre proyectos de ingeniería civil e industrial.">
+    <meta property="og:image" content="https://rebusingenieria.com/images/og-image.jpg">
+    <!-- Metadatos para Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rebusingenieria.com/pages/contacto.html">
+    <meta property="twitter:title" content="Contacto con Ingenieros Estructurales en Santa Fe | Rebus Ingeniería">
+    <meta property="twitter:description"
+        content="Ponte en contacto con nuestro equipo de ingenieros estructurales en Santa Fe. Completa nuestro formulario para consultas sobre proyectos de ingeniería civil e industrial.">
+    <meta property="twitter:image" content="https://rebusingenieria.com/images/og-image.jpg">
+    <!-- URL canónica para evitar contenido duplicado -->
+    <link rel="canonical" href="https://rebusingenieria.com/pages/contacto.html">
 </head>
 
 <body>
@@ -37,7 +65,8 @@
                         <li class="nav-item"><a class="nav-link" href="../pages/preguntas.html">Preguntas</a></li>
                         <!-- Selector de idioma -->
                         <li class="nav-item language-selector">
-                            <a class="nav-link" href="#"><img src="../images/lenguaje.svg" alt="Cambiar idioma" class="language-icon"></a>
+                            <a class="nav-link" href="#"><img src="../images/lenguaje.svg" alt="Cambiar idioma"
+                                    class="language-icon"></a>
                         </li>
                     </ul>
                 </div>
@@ -54,36 +83,66 @@
                     <!-- Contenedor del formulario con fondo claro -->
                     <div class="contact-form-section bg-light p-4 rounded">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
+                        <p class="mb-4">Completa el siguiente formulario y nos pondremos en contacto contigo lo antes
+                            posible. También puedes contactarnos directamente por WhatsApp o correo electrónico.</p>
                         <!-- Formulario de contacto -->
-                        <form class="contact-form">
+                        <form class="contact-form" action="#" method="POST">
                             <!-- Campo para nombre completo -->
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre completo</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Ingresa tu nombre y apellido" required>
                             </div>
                             <!-- Campo para correo electrónico -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="ejemplo@correo.com" required>
                             </div>
                             <!-- Campo para teléfono (opcional) -->
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Teléfono</label>
-                                <input type="tel" class="form-control" id="phone" name="phone">
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                    placeholder="+54 9 11 1234-5678">
                             </div>
                             <!-- Campo para asunto del mensaje -->
                             <div class="mb-3">
                                 <label for="subject" class="form-label">Asunto</label>
-                                <input type="text" class="form-control" id="subject" name="subject" required>
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                    placeholder="Motivo de tu consulta" required>
                             </div>
                             <!-- Área de texto para el mensaje -->
                             <div class="mb-3">
                                 <label for="message" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="5"
+                                    placeholder="Describe tu proyecto o consulta" required></textarea>
                             </div>
                             <!-- Botón de envío del formulario -->
-                            <button type="submit" class="btn button px-4 py-2">Enviar</button>
+                            <button type="submit" class="btn button px-4 py-2">Enviar mensaje</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información de contacto adicional -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8">
+                    <div class="contact-info-section bg-light p-4 rounded">
+                        <h2 class="mb-4">Información de contacto</h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <h3 class="h5">Dirección</h3>
+                                <p>Santa Fe, Argentina</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <h3 class="h5">Teléfono</h3>
+                                <p>+54 9 11 34259152</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <h3 class="h5">Email</h3>
+                                <p>contacto@rebusingenieria.com</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,12 +156,15 @@
                 <!-- Iconos de redes sociales -->
                 <div class="col-12 text-center mb-3">
                     <div class="social-media">
-                        <a href="#" class="me-2"><img src="../images/ig.svg" alt="Instagram"></a>
-                        <a href="#" class="me-2"><img src="../images/whatsapp.svg" alt="WhatsApp"></a>
-                        <a href="#"><img src="../images/mail.svg" alt="Email"></a>
+                        <a href="https://www.instagram.com/rebusingenieria/" target="_blank" rel="noopener"
+                            class="me-2"><img src="../images/ig.svg" alt="Síguenos en Instagram - Rebus Ingeniería"></a>
+                        <a href="https://wa.me/5491134259152" target="_blank" rel="noopener" class="me-2"><img
+                                src="../images/whatsapp.svg" alt="Contáctanos por WhatsApp - Rebus Ingeniería"></a>
+                        <a href="mailto:contacto@rebusingenieria.com"><img src="../images/mail.svg"
+                                alt="Envíanos un correo electrónico - Rebus Ingeniería"></a>
                     </div>
                 </div>
-                
+
                 <!-- Datos de contacto de la empresa -->
                 <div class="col-md-4 mb-3">
                     <div class="contact-info text-center">
@@ -111,11 +173,11 @@
                         <p class="mb-0">Dirección: Santa Fe, Argentina</p>
                     </div>
                 </div>
-                
+
                 <!-- Información de derechos de autor -->
                 <div class="col-12 text-center">
                     <div class="copyright">
-                        <span>&copy; 2025 Lorenzo Píccolo. | All Rights Reserved.</span>
+                        <span>&copy; 2024 Lorenzo Píccolo. | All Rights Reserved.</span>
                     </div>
                 </div>
             </div>
@@ -123,7 +185,34 @@
     </footer>
 
     <!-- Carga de scripts de Bootstrap para funcionalidades interactivas -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- Datos estructurados para mejorar la comprensión de los motores de búsqueda -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto - Rebus Ingeniería",
+      "description": "Página de contacto de Rebus Ingeniería, empresa especializada en ingeniería estructural en Santa Fe, Argentina.",
+      "url": "https://rebusingenieria.com/pages/contacto.html",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Rebus Ingeniería",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santa Fe",
+          "addressCountry": "Argentina"
+        },
+        "email": "contacto@rebusingenieria.com",
+        "telephone": "+5491134259152",
+        "sameAs": [
+          "https://www.instagram.com/rebusingenieria/"
+        ]
+      }
+    }
+    </script>
 </body>
 
 </html>
