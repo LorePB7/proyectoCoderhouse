@@ -1,6 +1,7 @@
 /* Importación de módulos necesarios */
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
+@use 'sass:color';
 
 /* Configuración general de la sección hero */
 .hero {
@@ -31,7 +32,9 @@
   /* Animación y alineación del contenido principal */
   .hero-content {
     @include m.fade-in(0.8s);
-    text-align: center; /* Centrado horizontal del contenido */
+    
+    /* Centrado horizontal del contenido - movido antes de la regla anidada */
+    text-align: center;
   }
   
   /* Estilo para el título principal */
@@ -67,6 +70,46 @@
       @include m.respond-to(sm) {
         margin: 0.5rem auto;
         width: 80%;
+      }
+    }
+  }
+  
+  /* Estilos para las tarjetas de servicios */
+  .service-cards {
+    margin-bottom: 2rem;
+    
+    .service-card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      
+      .service-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: v.$color-primary;
+      }
+      
+      .service-text {
+        font-size: 1rem;
+        line-height: 1.5;
+        
+        /* Ajustes para diferentes tamaños de pantalla */
+        @include m.respond-to(md) {
+          font-size: 0.9rem;
+        }
+        
+        @include m.respond-to(sm) {
+          font-size: 0.95rem;
+        }
       }
     }
   }
