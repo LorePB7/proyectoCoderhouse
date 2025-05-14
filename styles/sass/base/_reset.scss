@@ -11,6 +11,7 @@
 /* Configuración de altura para elementos base */
 html, body {
   height: 100%; /* Asegura que html y body ocupen toda la altura disponible */
+  overflow-x: hidden; /* Previene el scroll horizontal en todo el sitio */
 }
 
 /* Estilos base para el cuerpo del documento */
@@ -23,10 +24,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+  max-width: 100%; /* Asegura que el body no exceda el ancho del viewport */
+  overflow-x: hidden; /* Refuerza la prevención de scroll horizontal */
 }
 
 /* Configuración para que el contenido principal ocupe el espacio disponible */
 /* El contenido principal debe expandirse para empujar el footer hacia abajo */
 main, .page-content, .container-fluid {
   flex: 1 0 auto;
+  max-width: 100%; /* Asegura que estos contenedores no excedan el ancho del viewport */
 }

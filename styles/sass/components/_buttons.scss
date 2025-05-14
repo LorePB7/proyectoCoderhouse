@@ -52,3 +52,25 @@
   display: block;
   text-align: center;
 }
+
+// Estilos para el menú desplegable de idioma
+.language-selector {
+  .dropdown-menu {
+    background-color: v.$color-primary; // Usa el naranja definido en variables
+    border-color: v.$color-secondary;
+    
+    .dropdown-item {
+      color: v.$color-text; // Color marrón oscuro para el texto
+      
+      &:hover, &:focus {
+        background-color: v.$color-secondary; // Color secundario para el hover
+        color: v.$color-text-light; // Texto blanco al pasar el mouse
+      }
+      
+      &.active {
+        background-color: v.$color-secondary; // Color secundario para la opción activa
+        color: v.$color-text-light; // Texto blanco para la opción activa
+      }
+    }
+  }
+}
