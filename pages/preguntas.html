@@ -56,8 +56,14 @@
                         <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link active" href="../pages/preguntas.html">Preguntas</a></li>
                         <!-- Selector de idioma -->
-                        <li class="nav-item language-selector">
-                            <a class="nav-link" href="#"><img src="../images/lenguaje.svg" alt="Cambiar idioma" class="language-icon"></a>
+                        <li class="nav-item dropdown language-selector">
+                            <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/lenguaje.svg" alt="Cambiar idioma" class="language-icon">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item active" href="#">Español</a></li>
+                                <li><a class="dropdown-item" href="#">Inglés</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -69,8 +75,7 @@
     <section class="page-content py-5">
         <div class="container">
             <h1 class="text-center mb-5">Preguntas Frecuentes sobre Ingeniería Estructural</h1>
-            <p class="text-center mb-5">Encuentra respuestas a las dudas más comunes sobre nuestros servicios de ingeniería civil e industrial en Santa Fe. Si no encuentras lo que buscas, no dudes en <a href="../pages/contacto.html">contactarnos</a>.</p>
-
+            
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <!-- Componente acordeón para mostrar preguntas y respuestas -->
@@ -188,6 +193,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p class="text-center mb-5">Encuentra respuestas a las dudas más comunes sobre nuestros servicios de ingeniería civil e industrial en Santa Fe. Si no encuentras lo que buscas, no dudes en <a href="../pages/contacto.html">contactarnos</a>.</p>
                     </div>
                 </div>
             </div>

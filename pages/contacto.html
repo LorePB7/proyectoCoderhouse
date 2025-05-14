@@ -64,9 +64,14 @@
                         <li class="nav-item"><a class="nav-link active" href="../pages/contacto.html">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" href="../pages/preguntas.html">Preguntas</a></li>
                         <!-- Selector de idioma -->
-                        <li class="nav-item language-selector">
-                            <a class="nav-link" href="#"><img src="../images/lenguaje.svg" alt="Cambiar idioma"
-                                    class="language-icon"></a>
+                        <li class="nav-item dropdown language-selector">
+                            <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/lenguaje.svg" alt="Cambiar idioma" class="language-icon">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item active" href="#">Español</a></li>
+                                <li><a class="dropdown-item" href="#">Inglés</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -83,7 +88,7 @@
                     <!-- Contenedor del formulario con fondo claro -->
                     <div class="contact-form-section bg-light p-4 rounded">
                         <h2 class="mb-4">Envíanos un mensaje</h2>
-                        <p class="mb-4">Completa el siguiente formulario y nos pondremos en contacto contigo lo antes
+                        <p class="mb-4 text-center text-md-start text-sm-start">Completa el siguiente formulario y nos pondremos en contacto contigo lo antes
                             posible. También puedes contactarnos directamente por WhatsApp o correo electrónico.</p>
                         <!-- Formulario de contacto -->
                         <form class="contact-form" action="#" method="POST">
@@ -120,29 +125,6 @@
                             <!-- Botón de envío del formulario -->
                             <button type="submit" class="btn button px-4 py-2">Enviar mensaje</button>
                         </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Información de contacto adicional -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-8">
-                    <div class="contact-info-section bg-light p-4 rounded">
-                        <h2 class="mb-4">Información de contacto</h2>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <h3 class="h5">Dirección</h3>
-                                <p>Santa Fe, Argentina</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <h3 class="h5">Teléfono</h3>
-                                <p>+54 9 11 34259152</p>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <h3 class="h5">Email</h3>
-                                <p>contacto@rebusingenieria.com</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
